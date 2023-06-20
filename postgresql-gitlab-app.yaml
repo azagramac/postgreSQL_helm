@@ -18,4 +18,4 @@ spec:
       - values.yaml  
     path: .
     repoURL: https://github.com/AzagraMac/postgreSQL_helm.git
-    targetRevision: main
+    targetRevision: master
