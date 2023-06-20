@@ -1,0 +1,21 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: postgresql
+  namespace: argocd
+spec:
+  destination:
+    namespace: postgresql
+    server: https://kubernetes.default.svc
+  project: default
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+  source:
+    helm:
+      valueFiles:
+      - values.yaml  
+    path: .
+    repoURL: https://github.com/AzagraMac/postgreSQL_helm.git
+    targetRevision: main
